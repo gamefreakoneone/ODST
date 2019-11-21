@@ -1,108 +1,71 @@
 <html>
   <head>
-    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-    <script src="//embedr.flickr.com/assets/client-code.js"></script>
-    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
-    
-
-<meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M59+)" data-expires="2017-07-28" content="ArFv1ZeTwzkhjNE00uAE+XtiQB41fwqG/TqlFMLrepd9sforQSvQE/tgfIbUMYNuNre4QR1k4/z8xp2mV3dbhwwAAABeeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjEiLCJleHBpcnkiOjE1MDEyMTcwMDIsImlzU3ViZG9tYWluIjp0cnVlfQ==">
-<meta charset="utf-8">
-<title>Project blue</title>
-<meta name="description" content="Motion Capture Components – A-Frame">
-<meta aframe-injected="" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no,user-scalable=no,minimal-ui,viewport-fit=cover"><meta aframe-injected="" name="mobile-web-app-capable" content="yes"><meta aframe-injected="" name="theme-color" content="black"><script src="../../../dist/aframe-master.min.js"></script><style type="text/css" data-href="src/style/aframe.css">html.a-fullscreen{bottom:0;left:0;position:fixed;right:0;top:0}html.a-fullscreen body{height:100%;margin:0;overflow:hidden;padding:0;width:100%}html.a-fullscreen .a-canvas{width:100%!important;height:100%!important;top:0!important;left:0!important;right:0!important;bottom:0!important;position:fixed!important}html:not(.a-fullscreen) .a-enter-vr{right:5px;bottom:5px}:-webkit-full-screen{background-color:transparent}.a-hidden{display:none!important}.a-canvas{height:100%;left:0;position:absolute;top:0;width:100%}.a-canvas.a-grab-cursor:hover{cursor:grab;cursor:-moz-grab;cursor:-webkit-grab}canvas.a-canvas.a-mouse-cursor-hover:hover{cursor:pointer}.a-inspector-loader{background-color:#ed3160;position:fixed;left:3px;top:3px;padding:6px 10px;color:#fff;text-decoration:none;font-size:12px;font-family:Roboto,sans-serif;text-align:center;z-index:99999;width:204px}@keyframes dots-1{from{opacity:0}25%{opacity:1}}@keyframes dots-2{from{opacity:0}50%{opacity:1}}@keyframes dots-3{from{opacity:0}75%{opacity:1}}@-webkit-keyframes dots-1{from{opacity:0}25%{opacity:1}}@-webkit-keyframes dots-2{from{opacity:0}50%{opacity:1}}@-webkit-keyframes dots-3{from{opacity:0}75%{opacity:1}}.a-inspector-loader .dots span{animation:dots-1 2s infinite steps(1);-webkit-animation:dots-1 2s infinite steps(1)}.a-inspector-loader .dots span:first-child+span{animation-name:dots-2;-webkit-animation-name:dots-2}.a-inspector-loader .dots span:first-child+span+span{animation-name:dots-3;-webkit-animation-name:dots-3}a-scene{display:block;position:relative;height:100%;width:100%}a-assets,a-scene audio,a-scene img,a-scene video{display:none}.a-enter-vr-modal,.a-orientation-modal{font-family:Consolas,Andale Mono,Courier New,monospace}.a-enter-vr-modal a{border-bottom:1px solid #fff;padding:2px 0;text-decoration:none;transition:.1s color ease-in}.a-enter-vr-modal a:hover{background-color:#fff;color:#111;padding:2px 4px;position:relative;left:-4px}.a-enter-vr{font-family:sans-serif,monospace;font-size:13px;width:100%;font-weight:200;line-height:16px;position:absolute;right:20px;bottom:20px}.a-enter-vr-button,.a-enter-vr-modal,.a-enter-vr-modal a{color:#fff}.a-enter-vr-button{background:url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20245.82%20141.73%22%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill%3A%23fff%3Bfill-rule%3Aevenodd%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3Emask%3C%2Ftitle%3E%3Cpath%20class%3D%22a%22%20d%3D%22M175.56%2C111.37c-22.52%2C0-40.77-18.84-40.77-42.07S153%2C27.24%2C175.56%2C27.24s40.77%2C18.84%2C40.77%2C42.07S198.08%2C111.37%2C175.56%2C111.37ZM26.84%2C69.31c0-23.23%2C18.25-42.07%2C40.77-42.07s40.77%2C18.84%2C40.77%2C42.07-18.26%2C42.07-40.77%2C42.07S26.84%2C92.54%2C26.84%2C69.31ZM27.27%2C0C11.54%2C0%2C0%2C12.34%2C0%2C28.58V110.9c0%2C16.24%2C11.54%2C30.83%2C27.27%2C30.83H99.57c2.17%2C0%2C4.19-1.83%2C5.4-3.7L116.47%2C118a8%2C8%2C0%2C0%2C1%2C12.52-.18l11.51%2C20.34c1.2%2C1.86%2C3.22%2C3.61%2C5.39%2C3.61h72.29c15.74%2C0%2C27.63-14.6%2C27.63-30.83V28.58C245.82%2C12.34%2C233.93%2C0%2C218.19%2C0H27.27Z%22%2F%3E%3C%2Fsvg%3E) 50% 50%/70% 70% no-repeat rgba(0,0,0,.35);border:0;bottom:0;cursor:pointer;min-width:50px;min-height:30px;padding-right:5%;padding-top:4%;position:absolute;right:0;transition:background-color .05s ease;-webkit-transition:background-color .05s ease;z-index:9999}.a-enter-vr-button:active,.a-enter-vr-button:hover{background-color:#666}[data-a-enter-vr-no-webvr] .a-enter-vr-button{border-color:#666;opacity:.65}[data-a-enter-vr-no-webvr] .a-enter-vr-button:active,[data-a-enter-vr-no-webvr] .a-enter-vr-button:hover{background-color:rgba(0,0,0,.35);cursor:not-allowed}.a-enter-vr-modal{background-color:#666;border-radius:0;display:none;min-height:32px;margin-right:70px;padding:9px;width:280px;right:2%;position:absolute}.a-enter-vr-modal:after{border-bottom:10px solid transparent;border-left:10px solid #666;border-top:10px solid transparent;display:inline-block;content:'';position:absolute;right:-5px;top:5px;width:0;height:0}.a-enter-vr-modal a,.a-enter-vr-modal p{display:inline}.a-enter-vr-modal p{margin:0}.a-enter-vr-modal p:after{content:' '}[data-a-enter-vr-no-headset].a-enter-vr:hover .a-enter-vr-modal,[data-a-enter-vr-no-webvr].a-enter-vr:hover .a-enter-vr-modal{display:block}.a-orientation-modal{background:url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20version%3D%221.1%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%2090%2090%22%20enable-background%3D%22new%200%200%2090%2090%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpolygon%20points%3D%220%2C0%200%2C0%200%2C0%20%22%3E%3C/polygon%3E%3Cg%3E%3Cpath%20d%3D%22M71.545%2C48.145h-31.98V20.743c0-2.627-2.138-4.765-4.765-4.765H18.456c-2.628%2C0-4.767%2C2.138-4.767%2C4.765v42.789%20%20%20c0%2C2.628%2C2.138%2C4.766%2C4.767%2C4.766h5.535v0.959c0%2C2.628%2C2.138%2C4.765%2C4.766%2C4.765h42.788c2.628%2C0%2C4.766-2.137%2C4.766-4.765V52.914%20%20%20C76.311%2C50.284%2C74.173%2C48.145%2C71.545%2C48.145z%20M18.455%2C16.935h16.344c2.1%2C0%2C3.808%2C1.708%2C3.808%2C3.808v27.401H37.25V22.636%20%20%20c0-0.264-0.215-0.478-0.479-0.478H16.482c-0.264%2C0-0.479%2C0.214-0.479%2C0.478v36.585c0%2C0.264%2C0.215%2C0.478%2C0.479%2C0.478h7.507v7.644%20%20%20h-5.534c-2.101%2C0-3.81-1.709-3.81-3.81V20.743C14.645%2C18.643%2C16.354%2C16.935%2C18.455%2C16.935z%20M16.96%2C23.116h19.331v25.031h-7.535%20%20%20c-2.628%2C0-4.766%2C2.139-4.766%2C4.768v5.828h-7.03V23.116z%20M71.545%2C73.064H28.757c-2.101%2C0-3.81-1.708-3.81-3.808V52.914%20%20%20c0-2.102%2C1.709-3.812%2C3.81-3.812h42.788c2.1%2C0%2C3.809%2C1.71%2C3.809%2C3.812v16.343C75.354%2C71.356%2C73.645%2C73.064%2C71.545%2C73.064z%22%3E%3C/path%3E%3Cpath%20d%3D%22M28.919%2C58.424c-1.466%2C0-2.659%2C1.193-2.659%2C2.66c0%2C1.466%2C1.193%2C2.658%2C2.659%2C2.658c1.468%2C0%2C2.662-1.192%2C2.662-2.658%20%20%20C31.581%2C59.617%2C30.387%2C58.424%2C28.919%2C58.424z%20M28.919%2C62.786c-0.939%2C0-1.703-0.764-1.703-1.702c0-0.939%2C0.764-1.704%2C1.703-1.704%20%20%20c0.94%2C0%2C1.705%2C0.765%2C1.705%2C1.704C30.623%2C62.022%2C29.858%2C62.786%2C28.919%2C62.786z%22%3E%3C/path%3E%3Cpath%20d%3D%22M69.654%2C50.461H33.069c-0.264%2C0-0.479%2C0.215-0.479%2C0.479v20.288c0%2C0.264%2C0.215%2C0.478%2C0.479%2C0.478h36.585%20%20%20c0.263%2C0%2C0.477-0.214%2C0.477-0.478V50.939C70.131%2C50.676%2C69.917%2C50.461%2C69.654%2C50.461z%20M69.174%2C51.417V70.75H33.548V51.417H69.174z%22%3E%3C/path%3E%3Cpath%20d%3D%22M45.201%2C30.296c6.651%2C0%2C12.233%2C5.351%2C12.551%2C11.977l-3.033-2.638c-0.193-0.165-0.507-0.142-0.675%2C0.048%20%20%20c-0.174%2C0.198-0.153%2C0.501%2C0.045%2C0.676l3.883%2C3.375c0.09%2C0.075%2C0.198%2C0.115%2C0.312%2C0.115c0.141%2C0%2C0.273-0.061%2C0.362-0.166%20%20%20l3.371-3.877c0.173-0.2%2C0.151-0.502-0.047-0.675c-0.194-0.166-0.508-0.144-0.676%2C0.048l-2.592%2C2.979%20%20%20c-0.18-3.417-1.629-6.605-4.099-9.001c-2.538-2.461-5.877-3.817-9.404-3.817c-0.264%2C0-0.479%2C0.215-0.479%2C0.479%20%20%20C44.72%2C30.083%2C44.936%2C30.296%2C45.201%2C30.296z%22%3E%3C/path%3E%3C/g%3E%3C/svg%3E) center/50% 50% no-repeat rgba(244,244,244,1);bottom:0;font-size:14px;font-weight:600;left:0;line-height:20px;right:0;position:fixed;top:0;z-index:9999999}.a-orientation-modal:after{color:#666;content:"Insert phone into Cardboard holder.";display:block;position:absolute;text-align:center;top:70%;transform:translateY(-70%);width:100%}.a-orientation-modal button{background:url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20version%3D%221.1%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20100%20100%22%20enable-background%3D%22new%200%200%20100%20100%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M55.209%2C50l17.803-17.803c1.416-1.416%2C1.416-3.713%2C0-5.129c-1.416-1.417-3.713-1.417-5.129%2C0L50.08%2C44.872%20%20L32.278%2C27.069c-1.416-1.417-3.714-1.417-5.129%2C0c-1.417%2C1.416-1.417%2C3.713%2C0%2C5.129L44.951%2C50L27.149%2C67.803%20%20c-1.417%2C1.416-1.417%2C3.713%2C0%2C5.129c0.708%2C0.708%2C1.636%2C1.062%2C2.564%2C1.062c0.928%2C0%2C1.856-0.354%2C2.564-1.062L50.08%2C55.13l17.803%2C17.802%20%20c0.708%2C0.708%2C1.637%2C1.062%2C2.564%2C1.062s1.856-0.354%2C2.564-1.062c1.416-1.416%2C1.416-3.713%2C0-5.129L55.209%2C50z%22%3E%3C/path%3E%3C/svg%3E) no-repeat;border:none;height:50px;text-indent:-9999px;width:50px}.a-loader-title{background-color:rgba(0,0,0,.6);font-family:sans-serif,monospace;text-align:center;font-size:20px;height:50px;font-weight:300;line-height:50px;position:absolute;right:0;left:0;top:0;color:#fff}</style><style type="text/css" data-href="src/style/rStats.css">.rs-base{background-color:#333;color:#fafafa;border-radius:0;font:10px monospace;left:5px;line-height:1em;opacity:.85;overflow:hidden;padding:10px;position:fixed;top:5px;width:300px;z-index:10000}.rs-base div.hidden{display:none}.rs-base h1{color:#fff;cursor:pointer;font-size:1.4em;font-weight:300;margin:0 0 5px;padding:0}.rs-group{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-direction:column-reverse;flex-direction:column-reverse;margin-bottom:5px}.rs-group:last-child{margin-bottom:0}.rs-counter-base{align-items:center;display:-webkit-box;display:-webkit-flex;display:flex;height:10px;-webkit-justify-content:space-between;justify-content:space-between;margin:2px 0}.rs-counter-base.alarm{color:#b70000;text-shadow:0 0 0 #b70000,0 0 1px #fff,0 0 1px #fff,0 0 2px #fff,0 0 2px #fff,0 0 3px #fff,0 0 3px #fff,0 0 4px #fff,0 0 4px #fff}.rs-counter-id{font-weight:300;-webkit-box-ordinal-group:0;-webkit-order:0;order:0;width:54px}.rs-counter-value{font-weight:300;-webkit-box-ordinal-group:1;-webkit-order:1;order:1;text-align:right;width:35px}.rs-canvas{-webkit-box-ordinal-group:2;-webkit-order:2;order:2}@media (min-width:480px){.rs-base{left:20px;top:20px}}</style>
-<script src="../../js/vendor/LegacyJSONLoader.js"></script>
-<script src="js/components/aframe-tooltip-component.js"></script>
-<script src="js/components/camera-position.js"></script>
-<script src="js/components/ground.js"></script>
-<script src="vendor/LegacyJSONLoader.js"></script>
-<script src="js/components/link-controls.js"></script>
-<script src="shaders/skyGradient.js"></script>
-
-   
+    <meta charset="utf-8">
+    <title>360&deg; Image Gallery</title>
+    <meta name="description" content="360&deg; Image Gallery - A-Frame">
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
   </head>
   <body>
-    <a-scene loading-screen="dotscolor:orange; backgroundcolor: green">
+    <a-scene>
       <a-assets>
-      <img id="blue_wall" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2FkO1n5xe.png?v=1571741911023">
-        <img id="ceiling_t" color="FFF5EE">
-        <img id="founder" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2Ftma.jfif?v=1573986507770">
-        <img id="chance" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2F330px-Ramdas_Pai.jpg">
-        <img id="grad1" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2Funtitled.png?v=1574103993165">
-        <img id="home" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2Foverlay_hostel.jpg?v=1574116825047">
-        <img id="gallery" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2FThe_Verge_Hysteresis_Wallpaper_Landscape.0.png?v=1574254185461">
+        <img id="city" crossorigin="anonymous" src="https://cdn.glitch.com/13c063b4-40dc-4026-addb-65e5f911a83b%2Fawd.jfif?v=1574256401660">
+        <img id="city-thumb" crossorigin="anonymous" src="https://cdn.glitch.com/13c063b4-40dc-4026-addb-65e5f911a83b%2Fawd.jfif?v=1574256401660">
+        <img id="cubes-thumb" crossorigin="anonymous" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2Foverlay_hostel_upscaled_image_x4.jpg?v=1574310935313">
+        <img id="sechelt-thumb" crossorigin="anonymous" src="https://cdn.glitch.com/13c063b4-40dc-4026-addb-65e5f911a83b%2F2018-03-16.jpg?v=1574257217596">
+        <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+        <img id="cubes" crossorigin="anonymous" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2Foverlay_hostel_upscaled_image_x4.jpg?v=1574310935313">
+        <img id="sechelt" crossorigin="anonymous" src="https://cdn.glitch.com/13c063b4-40dc-4026-addb-65e5f911a83b%2F2018-03-16_upscaled_image_x4.jpg?v=1574273190326">
+
+        <!-- Image link template to be reused. -->
+        <script id="link" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: plane; height: 1; width: 1"
+            material="shader: flat; src: ${thumb}"
+            event-set__mouseenter="scale: 1.2 1.2 1"
+            event-set__mouseleave="scale: 1 1 1"
+            event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
+            proxy-event="event: click; to: #image-360; as: fade"
+            sound="on: click; src: #click-sound"></a-entity>
+        </script>
+         <script id="die" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: plane; height: 1; width: 1"
+            material="shader: flat; src: ${thumb}"
+            event-set__mouseenter="scale: 1.2 1.2 1"
+            event-set__mouseleave="scale: 1 1 1"
+            event-set__click="_target: #image-360; _delay: 300; material.src: ${https://coordinated-stilton.glitch.me/}"
+            proxy-event="event: click; to: #{https://coordinated-stilton.glitch.me/}; as: fade"
+            sound="on: click; src: #click-sound"></a-entity>
+        </script>
       </a-assets>
-      <a-camera>
-        <a-cursor color="#FF000"></a-cursor>
-      </a-camera>
-      <canvas class="a-canvas a-grab-cursor" data-aframe-canvas="true" width="1920" height="278"></canvas>
+
+      <!-- 360-degree image. -->
+      <a-sky id="image-360" radius="10" src="#city"
+             animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
+             animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
+
+      <!-- Image links. -->
+      <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
+        <a-entity template="src: #link" data-src="#cubes" data-thumb="#cubes-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#city" data-thumb="#city-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#sechelt" data-thumb="#sechelt-thumb"></a-entity>
+      </a-entity>
       
-      
-      
-      <a-sky color="orange"></a-sky>
-      <! room1>
-      <a-plane material="side:double" id="floor" color="lightblue" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2FkO1n5xe.png?v=1571744465057" position="0 0 -4" rotation="-90 0 0" height="1000" width="1000"></a-plane>
-      
-      <a-plane material="side:double" id="wall l" color="#ffebcd" position="-7 2 -5" height="8" width="20" rotation="0 90 0"></a-plane>
-      <a-plane position="-6.99 3 -3" material="Side:double" color="#ffebcd" rotation="0 90 0" height="2" width="2" text="font: mozillavr; value:Dr. T.M.A Pai.;baseline:top;align:center;width:14;color:black"></a-plane>
-      <a-plane position="-6.99 2 -3" material="Side:double" color="#ffebcd" rotation="0 90 0" height="4" width="4" text="value: Dr. Tonse Madhav Ananth Pai, abbreviated: T. M. A. Pai, (30 April 1898 – 29 May 1979), was an Indian doctor, educationist, banker and philanthropist, most well known for building the university town of Manipal, India \t; align: center; baseline: top; color:black "></a-plane>
-      <a-image id="TMA" position="-6.99 2 -7" material="side:double" src="#founder" rotation="0 90 0" height="3" width="3" ></a-image>
-      
-      
-      
-      
-      <a-torus-knot color="white" position="0.215 2 -17.321" height="2" width="2" material="src:#gallery" animation="property:rotation;repeat:indefinite;from:0 0 0;to:360 360 360;dur:50000;loop:500;easing:linear"> 
-    
-      </a-torus-knot>
-      
-      <a-plane id="WALL 3" color="#fcbe32" material="side:double" position="0 0 4" height="8" width="14" rotation="-180 0 0" ></a-plane>
-      <a-video width="6" height="5" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2Fmanipal.mp4?v=1574110784278" position="0 2 3.9" rotation="0 180 0"></a-video>
-      <a-plane id="ceiling" color="#FFDFDD"  position="0 4 -5" material="side:double" height="200" width="140" rotation="90 -90 90"  light="type: ambient; color:white" ></a-plane>
-      
-      <a-plane id="wall 2" material="side:double"  color="#ffebcd" position="7 0 -5" height="8" width="20" rotation="0 -90 0"></a-plane>
-      <a-image id="sidedude" src="#chance"  geometry="side:double" position="6.99 2 -6" height="3" width="2" rotation="0 90 0"></a-image>
-      <a-plane position="6.95 3 -3" material="transparent:True"  geometry="Side:double" color="#ffebcd" rotation="0 -90 0" height="2" width="2" text="font: mozillavr; value:Ramdas Pai.;baseline:top;align:center;width:14;color:black"></a-plane>
-      <a-plane position="6.99 2 -3" material="transparent:True" geometry="Side:double" color="#ffebcd" rotation="0 -90 0" height="4" width="4" text="value: Ramdas Madhav Pai is the Chancellor of Manipal University, and chairman of the Manipal Education and Medical Group. \t; align: center; baseline: top; color:black "></a-plane>
-      
-      <! room2>
-      <a-plane id="muj" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2F113243-red-and-yellow-blurred-background-vector.jpg?v=1574317761598" position="8.25 3 -15" material="side:double" height="10" width="19" text="value:=======MUJ=======\t \t; align:left; baseline:top" rotation="0 -30 0" animation="property:position;to:8.25 20 -15;dur:1520;easing:linear;delay:15031"></a-plane>
-      <a-plane id="manipal" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2FFutureOfMusic_Season02_Landscape.0.png?v=1574253850473" position="-8.25 3 -15" material="side:double" height="10" width="19" text="value:=============================Manipal=======\t \t; align:left; baseline:top" rotation="0 30 0" animation="property:position;to:8.25 20 -15;dur:1520;easing:linear;delay:15031"></a-plane>
-      <a-plane id="door1"  material="side:double" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2F99BJx.jpg?v=1574102879795" color="#4EE2EC" position="0 2 -15" text="value: THE UNIVERSITIES;align:center;baseline:top" animation="property: position; to: 30 0 -15; dur: 1800; easing: linear;delay:8000" height="8" width="20">      </a-plane>
-      
-      
-      <! muj>
-      <a-plane id="wall 4.1" color=" #cbe86b" material="side:double" position="4.45 0 -29" height="8" width="20" rotation="0 65 0"></a-plane>
-      <a-plane id="wall 4"  color=" #cbe86b" material="side:double" position="11.82 3 -25.313" height="10" width="23" rotation="180 65 180"> </a-plane>
-      <a-plane color=" #cbe86b" color="#cbe86b" text="value: Why MUJ?;baseline:top;align:center;width:12w;color:black" material="side:double" position="8.978 3 -19.43" height="0.25" width="3" rotation="180 65 180"></a-plane>
-      <a-plane id="why?"  color="#cbe86b" text="value: The University boasts of the best-in-class infrastructure, including the state-of-the-art research facilities and a modern digital library.  A well-qualified team of 405 faculty members is the asset of the University with a large number of them having Ph D.;baseline:top;align:center;width:4;color:black" material="side:double" position="8.978 2.250 -19.43" height="0.25" width="3" rotation="180 65 180"> </a-plane>
-    <a-image id="building 1" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2Fns2z5n8901z31.jpg?v=1574241832660" position="14.08 1.989 -30.27" rotation="180 65 180" height="3" width="6"></a-image>
-    <a-image id="building 2" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2F2.jpg?v=1574116691374" position="11.31 1.989 -24.27" rotation="180 65 180" height="3" width="6"></a-image>
-    <a-image id="test1" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2Fqw.png?v=1574119115114" position="1.620 1.737 -22.51" rotation="0 65 0" height="4" width="2"> </a-image>
-     <a-image id="test2" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2Fre.png?v=1574119122184" position="3.196 1.737 -25.90" rotation="0 65 0" height="4" width="2"> </a-image>
-    <a-image id="test3" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2Fwe.png?v=1574119135950" position="5.240 1.900 -29.91" rotation="0 65 0" height="4" width="2"> </a-image>
-   <a-image id="test4" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2FScreenshot_2019-11-19%20Faculty%20of%20Engineering%20At%20Manipal%20University%20in%20Jaipur%20-%20FOE%20At%20Manipal%20University%20in%20Jaipur.png?v=1574119124394" position="6.410 1.981 -32.66" rotation="0 65 0" height="4" width="2"> </a-image> 
-   <a-link href="https://marsh-bagel.glitch.me/" title="gallery" bordercolor="orange" backgroundcolor="orange" position="7.5 2 -16.43" rotation="-180 65 -180"></a-link>
-    
-       <a-curvedimage id="night" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2Fawd.jfif?v=1574116815708" position="11.354 1.756 -33.191" height="6" radius="5" theta-length="122" rotation="0 100 0"></a-curvedimage>
-    
-    
-    
-    
-    
-    <!manipal>
-    <a-plane id="wall 5" color=" #45d9fd" material="side:double" position="-11.25 0 -24" height="8" width="20" rotation="180 -65 0"></a-plane>
-      <a-plane id="wall 5.1" color="#45d9fd" material="side:double" position="-4 0 -29" height="8" width="20" rotation="0 -65 0"></a-plane>
-    <a-plane id="whym?"  color="#45d9fd" text="value: The University boasts of the best-in-class infrastructure, including the state-of-the-art research facilities and a modern digital library.  A well-qualified team of 405 faculty members is the asset of the University with a large number of them having Ph D.;baseline:top;align:center;width:4;color:black" material="side:double" position="-11.25 2 -24" height="0.25" width="3" rotation="180 -65 -180"> </a-plane>
-      <a-plane id="whyme?"  color="#45d9fd" text="value:WHY?;baseline:top;align:center;width:13;color:black" material="side:double" position="-11.2 2.656 -24.00" height="0.25" width="3" rotation="180 -65 -180"> </a-plane>
-      <a-image id="building" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2Fqwe.jfif?v=1574126146808"  position="-8.44 2.042 -18.71" height="3" width="6" rotation="180 -65 -180"></a-image>
-    <a-image id="buildin2" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2Fwew.jfif?v=1574126154144"  position="-13.597 1.842 -29.52" height="3" width="6" rotation="180 -65 -180"></a-image>
-    <a-image id="testi1" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2FScreenshot_2019-11-19%20Campus%20Life%20Manipal%20Academy%20of%20Higher%20Education%20(formerly%2C%20Manipal%20University).png?v=1574125891122"  position="-5.76 1.856 -32.33" height="4" width="2" rotation="0 -65 0"></a-image>
-    <a-image id="testi2" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2FScreenshot_2019-11-19%20Campus%20Life%20Manipal%20Academy%20of%20Higher%20Education%20(formerly%2C%20Manipal%20University)(3).png?v=1574125891902"  position="-4.359 1.895 -29.57" height="4" width="2" rotation="0 -65 0"></a-image>
-    <a-image id="testi3" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2FScreenshot_2019-11-19%20Campus%20Life%20Manipal%20Academy%20of%20Higher%20Education%20(formerly%2C%20Manipal%20University)(2).png?v=1574125894793"  position="-2.938 1.933 -26.42" height="4" width="2" rotation="0 -65 0"></a-image>
-    <a-image id="testi4" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2FScreenshot_2019-11-19%20Campus%20Life%20Manipal%20Academy%20of%20Higher%20Education%20(formerly%2C%20Manipal%20University)(1).png?v=1574125908534"  position="-1.787 1.900 -23.596" height="4" width="2" rotation="0 -65 0"></a-image>
-       <a-curvedimage id="pepe" src="https://cdn.glitch.com/cc9640c6-9b11-46d9-a1d3-9018acc6f1b0%2F4gerny9jbmy31.jpg?v=1574252039518" position="-10.427 3 -32.724" height="6" radius="5" theta-length="122" rotation="0 145.648 0"></a-curvedimage>
-     <a-link href="https://coordinated-stilton.glitch.me/" title="video" bordercolor="orange" backgroundcolor="orange" position="-.9 1.900 -20.596" height="4" width="2" rotation="0 -65 0"></a-link>
-    
-    
-    </a-scene> 
+
+      <!-- Camera + cursor. -->
+      <a-entity id="camera" camera look-controls>
+        <a-cursor
+          id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__mouseenter="_event: mouseenter; color: springgreen"
+          event-set__mouseleave="_event: mouseleave; color: black"
+          raycaster="objects: .link"></a-cursor>
+      </a-entity>
+    </a-scene>
   </body>
 </html>
